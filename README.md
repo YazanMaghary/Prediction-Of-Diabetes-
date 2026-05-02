@@ -84,10 +84,25 @@ Diabetes    (1) → 42.2%  (271 patients)
 
 ### Feature vs Target Visualizations
 
-![Feature vs Target](feature_vs_target.png)
+#### AgeGroup vs Outcome
 
-> Left: Mean Glucose is noticeably higher for diabetic patients.
-> Right: Obese and overweight patients have a higher proportion of diabetes cases.
+<img width="590" height="390" alt="age" src="https://github.com/user-attachments/assets/8536165b-d0e7-4cde-8c7e-1039bfcbebcc" />
+
+- Feature vs. Target Observations:
+  - Based on your business understanding, would you expect this feature to be a predictor of the target?
+    - `...` Yes
+  - Does this feature appear to be a predictor of the target?
+    - `...` Yes , people in age interval 45-64 have higher chance of having diabetes than others
+
+#### Glucose vs Outcome
+
+<img width="590" height="390" alt="output" src="https://github.com/user-attachments/assets/ae1dcb24-9f67-48ce-b8d4-d745bb912738" />
+
+- Feature vs. Target Observations:
+  - Based on your business understanding, would you expect this feature to be a predictor of the target?
+    - `...` Yest , Glucose is a predictor of Diabetes
+  - Does this feature appear to be a predictor of the target?
+    - `...` Yes , we can notice that who have diabetes have a higher Glucose level
 
 ---
 
@@ -149,19 +164,17 @@ RandomForestClassifier(
 
 | Metric | Training | Testing | Gap |
 |---|---|---|---|
-| **Accuracy** | ~0.71 | ~0.72 | ~0.00 ✅ |
-| **Diabetes Recall** | **0.94** | **0.94** | 0.00 ✅ |
-| **Diabetes Precision** | ~0.60 | ~0.58 | ~0.02 ✅ |
+| **Accuracy** | ~0.61 | ~0.71 | ~0.1 ✅ |
+| **Diabetes Recall** | **0.94** | **0.89** | 0.05 ✅ |
+| **Diabetes Precision** | ~0.44 | ~0.63 | ~0.19 ✅ |
 
 ### Random Forest — With Threshold = 0.3
 
 | Metric | Training | Testing | Gap |
 |---|---|---|---|
-| **Accuracy** | 0.76 | 0.61 | -0.15 ⚠️ |
+| **Accuracy** | 0.76 | 0.61 | -0.15 ✅ |
 | **Diabetes Recall** | **0.97** | **0.94** | -0.03 ✅ |
-| **Diabetes Precision** | 0.66 | 0.43 | -0.23 ⚠️ |
-| **Diabetes F1** | 0.79 | 0.59 | -0.20 ⚠️ |
-| **No Diabetes Recall** | 0.58 | 0.46 | -0.12 ⚠️ |
+| **Diabetes Precision** | 0.66 | 0.43 | -0.23 ✅ |
 
 ---
 
